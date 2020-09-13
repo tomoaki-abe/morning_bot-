@@ -24,11 +24,12 @@ class LinebotController < ApplicationController
     events.each { |event|
 
       if event.message['text'].include?("パスワード")
-        response = "test1"
+        response = "パスワードが違う！曲者め！"
       elsif event.message['text'].include?("覚悟")
-        response = "test2"
+        response = "ふん、意気込みだけでは儂に勝てぬぞ"
       else event.message['text'].include?("姫はどこだ")
-        response = "test3"
+        response = "そんな小娘のことより、己自身の心配をせい"
+     
       end
 
 
