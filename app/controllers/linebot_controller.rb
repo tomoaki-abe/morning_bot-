@@ -24,7 +24,7 @@ class LinebotController < ApplicationController
     events.each { |event|
 
       if event.message['text'].include?("パスワード")
-        response = "パスワードが違う！曲者め！"
+        response = "test1"
       elsif event.message['text'].include?("覚悟")
         response = "ふん、意気込みだけでは儂に勝てぬぞ"
       else event.message['text'].include?("姫はどこだ")
@@ -40,7 +40,7 @@ class LinebotController < ApplicationController
         when Line::Bot::Event::MessageType::Text
           message = {
             type: 'text',
-            text: response
+            text: "hello"
           }
           client.reply_message(event['replyToken'], message)
         end
