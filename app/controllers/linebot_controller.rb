@@ -40,7 +40,7 @@ class LinebotController < ApplicationController
         when Line::Bot::Event::MessageType::Text
           message = {
             type: 'text',
-            text: "hello"
+            text: response
           }
           client.reply_message(event['replyToken'], message)
         end
