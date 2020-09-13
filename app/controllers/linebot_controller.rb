@@ -22,13 +22,24 @@ class LinebotController < ApplicationController
     events = client.parse_events_from(body)
 
     events.each { |event|
+
+      if event.message['text'].include?("パスワード")
+        response = "test1"
+      elsif event.message['text'].include?("覚悟")
+        response = "test2"
+      else event.message['text'].include?("姫はどこだ")
+        response = "test3"
+      end
+
+
+        
       case event
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
           message = {
             type: 'text',
-            text: event.message['text']
+            text: response
           }
           client.reply_message(event['replyToken'], message)
         end
