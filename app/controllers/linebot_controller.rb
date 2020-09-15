@@ -22,51 +22,14 @@ class LinebotController < ApplicationController
     events = client.parse_events_from(body)
 
     events.each { |event|
-
-      if event.message['text'].include?("パスワード")
-        response = "test1"
-      elsif event.message['text'].include?("覚悟")
-        response = "ふん、意気込みだけでは儂に勝てぬぞ"
-      else event.message['text'].include?("姫はどこだ")
-        response = "そんな小娘のことより、己自身の心配をせい"
-     
-      end
-
-
-        
       case event
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
           message = {
-            type: "template",
-            altText: "this is a confirm template",
-            template: {
-                type: "confirm",
-                text: "Are you sure?",
-                actions: [
-                    {
-                      type: "message",
-                      label: "Yes",
-                      text: "yes"
-                    },
-                    {
-                      type: "message",
-                      label: "No",
-                      text: "no"
-                    }
-                ]
-            }
-            }
+            type: 'text',
+            text: event.message['text']
           }
-          client.reply_message(event['replyToken'], message)
-        when Line::Bot::Event::MessageType::Follow #友達登録イベント
-          userId = event['source']['userId'] 
-          User.find_or_create_by(uid: userId)
-        when Line::Bot::Event::MessageType::Unfollow　#友達削除イベント
-          userId = event['source']['userId']  
-          user = User.find_by(uid: userId)
-          user.destroy if user.present?
         end
       end
     }
