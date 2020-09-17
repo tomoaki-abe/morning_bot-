@@ -4,7 +4,7 @@ class WebhookController < ApplicationController
 def kokodayo
   message = {
             "type": "text",
-            "text": "メッセージ"
+            "text": "ココア"
            }
             client = Line::Bot::Client.new { |config|
               config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
