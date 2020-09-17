@@ -28,7 +28,7 @@ class LinebotController < ApplicationController
         when Line::Bot::Event::MessageType::Text
           message = {
             type: 'text',
-            text: event.message['text']
+            text: "こここ"
           }
           client.reply_message(event['replyToken'], message)
         when Line::Bot::Event::MessageType::Follow #友達登録イベント
