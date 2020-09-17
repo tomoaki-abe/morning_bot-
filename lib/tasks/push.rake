@@ -4,7 +4,7 @@ namespace :push_line do
   task push_line_message_trash: :environment do
     
     # trash_day = TrashDay.new        
-
+    puts "hello"
     message = {
       type: 'text',
       text: "Good-morning"
