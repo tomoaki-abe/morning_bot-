@@ -8,16 +8,16 @@ def kokodayo
       "altText": "this is a confirm template",
       "template": {
           "type": "confirm",
-          "text": "Are you sure?",
+          "text": "Good morning! 起きたかな？",
           "actions": [
               {
                 "type": "message",
-                "label": "Yes",
+                "label": "おはよう！ 起きたよ!!",
                 "text": "yes"
               },
               {
                 "type": "message",
-                "label": "No",
+                "label": "起きれなかった、、、",
                 "text": "no"
               }
           ]

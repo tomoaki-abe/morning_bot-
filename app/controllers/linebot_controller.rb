@@ -22,13 +22,23 @@ class LinebotController < ApplicationController
     events = client.parse_events_from(body)
 
     events.each { |event|
+      if event.message['text'].include?("yes")
+        response = "その調子！今日も一日頑張ろうー！"
+      elsif event.message["text"].include?("おはよう")
+        response = "今日も一日頑張ろうー！"
+      elsif event.message['text'].include?("眠い")
+        response = "明日は頑張って起きよう！"
+      else event.message['text'].include?("no")
+        response = "起きて！" * 50
+      
+      end
       case event
       when Line::Bot::Event::Message
         case event.type
         when Line::Bot::Event::MessageType::Text
           message = {
             type: 'text',
-            text: "こここ"
+            text: response
           }
           client.reply_message(event['replyToken'], message)
         when Line::Bot::Event::MessageType::Follow #友達登録イベント
