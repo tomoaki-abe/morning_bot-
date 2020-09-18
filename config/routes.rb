@@ -5,9 +5,10 @@ Rails.application.routes.draw do
       get 'project'
       get 'start'
       get 'mypage'
+      get 'detailed'
     end
   end
-
+  
   get 'webhook/kokodayo'
   post '/callback' => 'linebot#callback'
 end

@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   def index
   end
 
+  def detailed
+  end
+
   def project
   end
 

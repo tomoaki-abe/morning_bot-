@@ -1,14 +1,33 @@
-.wrapper
-  .top-header
-    .site-logo
-    .site-nav-wrap    
-  = link_to project_posts_path, class: "header-projectButton" do
-    プロジェクト
-  = link_to start_posts_path, class: "header-startButton" do
-    スタート
-  = link_to mypage_posts_path, class: "header-mypageButton" do
-    マイページ
+.top-header
+  .site-logo
+  .site-nav
+    = link_to root_path, class: "site-nav__btn  site-nav__home" do
+      HOME
+    = link_to project_posts_path, class: "site-nav__btn" do
+      プロジェクト 
+    = link_to start_posts_path, class: "site-nav__btn" do
+      スタート
+    = link_to mypage_posts_path, class: "site-nav__btn" do
+      マイページ
+.wrapper 
   .top-main
-    %h1 Routine -習慣を手に入れよう-
-    %p 
-  .site-nav-wrap
+    .tittle
+      %h1.maintittle R o u t i n e 
+      %h1.subtittle 〜 習慣を手に入れよう 〜
+    = image_tag 'top.png', class: 'top-image'
+  .top-contents
+    .first-message
+      .explanation
+        %p.support-message  習慣を手に入れるためのきっかけ作りをサポートします。
+        %p.support-coment 
+      = image_tag 'support.png', class: 'support__image'
+    .second-message
+      = image_tag 'cliff.png', class: 'cliff__image'
+      .advice
+        %p.cliff-message  人が習慣を習得するには約66日間掛かる!
+        %p.cliff-coment という話をよく耳にしますよね？　
+  .top-category
+    %p.menu CATEGORY
+    %p.sub カテゴリー
+    = render partial: "category"
+  .top-footer

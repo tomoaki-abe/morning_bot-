@@ -4,11 +4,7 @@
     .containar
       .containar__icon
         = image_tag 'growth.png', class: 'containar__icon--growth'
-      .containar__lineup
-        = image_tag 'morning.png', class: 'containar__lineup--morning'
-        = image_tag 'motion.png', class: 'containar__lineup--motion'
-        = image_tag 'study.png', class: 'containar__lineup--study'
-        = image_tag 'programming.png', class: 'containar__lineup--programming'
+      = render partial: "category"
 
 
   .footer-start
