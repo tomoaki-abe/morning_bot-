@@ -1,0 +1,50 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  background-image: url('top.png') ;
+  height: 900px;
+  background-size: cover;
+}
+
+
+.wrapper-start{
+  .header-start{
+
+  }
+  .main-start{
+    .containar{
+      &__icon{
+        &--growth{
+          width: 100%;
+          height: 480px;
+        }
+      }
+      &__lineup{
+
+        &--morning{
+          height: 330px;
+          width: 330px;
+        }
+        &--motion{
+          height: 330px;
+          width: 330px;
+        }
+        &--study{
+          height: 330px;
+          width: 330px;
+        }
+        &--programming{
+          height: 330px;
+          width: 330px;
+        }
+      }
+    }
+  }
+    
+}
+  
+      
