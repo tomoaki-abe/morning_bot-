@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root to: 'posts#index'
+  get 'webhook/kokodayo'
+  post '/callback' => 'linebot#callback'
+
   resources :posts, only: [:index] do
     collection do
       get 'project'
@@ -9,6 +12,4 @@ Rails.application.routes.draw do
     end
   end
   
-  get 'webhook/kokodayo'
-  post '/callback' => 'linebot#callback'
 end
